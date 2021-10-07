@@ -22,16 +22,16 @@ class ClickHandler extends React.Component{
         })
         const thisforJquery = this;
         document.onkeydown = function(e) {
-            if(e.keyCode == 123) {
+            if(e.keyCode === 123) {
                 return false;
             }
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+            if(e.ctrlKey && e.shiftKey && e.keyCode === 'I'.charCodeAt(0)){
                 return false;
             }
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+            if(e.ctrlKey && e.shiftKey && e.keyCode === 'J'.charCodeAt(0)){
                 return false;
             }
-            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+            if(e.ctrlKey && e.keyCode === 'U'.charCodeAt(0)){
                 return false;
             }
         }
@@ -40,9 +40,9 @@ class ClickHandler extends React.Component{
         let touchStart = "";
         $("body").on("touchstart mousedown",function(e){
             counter +=1;
-            if(counter == 1){
-                touchStart = e.type == "touchstart";
-                mouseDown = e.type == "mousedown";
+            if(counter === 1){
+                touchStart = e.type === "touchstart";
+                mouseDown = e.type === "mousedown";
                 if(touchStart){
                     $(this).off("mousedown")
                 }

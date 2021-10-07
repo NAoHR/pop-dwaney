@@ -21,7 +21,32 @@ class ClickHandler extends React.Component{
             "display" : "none"
         })
         const thisforJquery = this;
-        $("body").on("mousedown touchstart",function(){
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+                return false;
+            }
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+                return false;
+            }
+        }
+        let counter = 0;
+        let mouseDown = "";
+        let touchStart = "";
+        $("body").on("touchstart mousedown",function(e){
+            counter +=1;
+            if(counter == 1){
+                touchStart = e.type == "touchstart";
+                mouseDown = e.type == "mousedown";
+                if(touchStart){
+                    $(this).off("mousedown")
+                }
+            }
             thisforJquery.dwayneSound.rate(1.3,thisforJquery.dwayneSound.play());
             thisforJquery.setState({
                 counter : thisforJquery.state.counter + 1
@@ -49,7 +74,7 @@ class ClickHandler extends React.Component{
                 default:
                     return "";
             }
-        }).bind("mouseup touchend",function(){
+        }).bind("touchend mouseup",function(e){
             $("#after").css({
                 "display" : "none"
             });

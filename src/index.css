@@ -1,5 +1,11 @@
-body {
-  margin: 0;
+*{
+  user-select: none;
+  padding: 0px;
+  margin: 0px;
+}
+html,body {
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +16,90 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.amongusBackground{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.centered{
+  position: relative;
+  z-index:100;
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+.toptitle{
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index:10;
+}
+.title{
+  text-align:center;
+  font-size: 45px;
+  -webkit-text-stroke-width: 1.9px;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-fill-color: #ffffff;
+  font-family: 'Balsamiq Sans', cursive;
+}
+.dwaynepict{
+  width: 90%;
+  position: absolute;
+  height: 65%;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#counter{
+  animation: animatefirstCome .2s linear;
+}
+.relativewrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@keyframes animatefirstCome {
+  0%{
+    font-size:45px;
+  }
+  100%{
+    font-size:55px;
+  }
+}
+.imagechange{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width:600px){
+  .centered{
+    width: 100%;
+  }
+}
+@media screen and (max-width:400px){
+  .title{
+    text-align:center;
+    font-size: 40px;
+    -webkit-text-stroke-width: 1.9px;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-fill-color: #ffffff;
+    font-family: 'Balsamiq Sans', cursive;
+  }
+  #counter{
+    animation: animatefirstCome .2s linear;
+  }
+  .relativewrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  @keyframes animatefirstCome {
+    0%{
+      font-size:40px;
+    }
+    100%{
+      font-size:55px;
+    }
+  }
 }

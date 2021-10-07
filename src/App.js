@@ -11,8 +11,8 @@ function App() {
         <div className="centered">
           <Consumer>
             {
-              numberNow => {
-                return <TopTitle nowNumber={numberNow}/>
+              currentNumber => {
+                return <TopTitle nowNumber={currentNumber}/>
               }
             }
           </Consumer>

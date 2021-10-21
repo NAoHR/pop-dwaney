@@ -48,6 +48,13 @@ class ClickHandler extends React.Component{
                 }
             }
             thisforJquery.dwayneSound.rate(1.33,thisforJquery.dwayneSound.play());
+            $("#counter").css("transform","scale(1.4)");
+            setTimeout(() => {
+                $("#counter").css({
+                    "transition" : ".2s",
+                    "transform":"scale(1)"
+            });
+            }, 100);
             thisforJquery.setState({
                 counter : thisforJquery.state.counter + 1
             });
@@ -81,6 +88,7 @@ class ClickHandler extends React.Component{
             $("#before").css({
                 "display" : "inline-block"
             })
+            // $("#counter").css("transform","scale(1)");
         })
     }
     render(){

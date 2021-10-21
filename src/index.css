@@ -52,21 +52,14 @@ code {
   transform: translateX(-50%);
 }
 #counter{
-  animation: animatefirstCome .2s linear;
+  /* transition: .5s; */
 }
 .relativewrapper{
   position: relative;
   width: 100%;
   height: 100%;
 }
-@keyframes animatefirstCome {
-  0%{
-    font-size:45px;
-  }
-  100%{
-    font-size:55px;
-  }
-}
+
 .imagechange{
   position: absolute;
   width: 100%;
